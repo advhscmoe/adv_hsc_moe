@@ -15,9 +15,9 @@ REGISTER 'jyson-1.0.2/lib/jyson-1.0.2.jar';
 -- define Enumerate datafu.pig.bags.Enumerate('1');
 REGISTER 'amazon_data_udf.py' using jython AS udf;
 /*
-%DEFAULT base_output '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/gnn_codist_base'
+%DEFAULT base_output '$HDFS_ROOT/amazon_data_processed/gnn_codist_base'
 %DEFAULT input_file '$base_output.train.tsv'
-%DEFAULT output_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/category_counts.train'
+%DEFAULT output_file '$HDFS_ROOT/amazon_data_processed/category_counts.train'
 %DEFAULT num_parallel 100
 */
 

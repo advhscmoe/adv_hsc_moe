@@ -12,12 +12,12 @@ SET output.compression.codec org.apache.hadoop.io.compress.GzipCodec;
 REGISTER 'jyson-1.0.2/lib/jyson-1.0.2.jar';
 REGISTER 'amazon_data_udf.py' using jython AS udf;
 
-%DEFAULT base_input '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/user_item_aggregated.with_negatives.tsv'
+%DEFAULT base_input '$HDFS_ROOT/amazon_data_processed/user_item_aggregated.with_negatives.tsv'
 %DEFAULT input_file '$base_input/par*[1-9].gz'
 %DEFAULT input_file2 '$base_input/par*0.gz'
 
--- %DEFAULT base_output '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/user_aggregated'
-%DEFAULT base_output '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/user_aggregated.with_negatives'
+-- %DEFAULT base_output '$HDFS_ROOT/amazon_data_processed/user_aggregated'
+%DEFAULT base_output '$HDFS_ROOT/amazon_data_processed/user_aggregated.with_negatives'
 %DEFAULT output_file '$base_output.train.tsv'
 %DEFAULT output_file2 '$base_output.test.tsv'
 

@@ -12,8 +12,8 @@ SET output.compression.codec org.apache.hadoop.io.compress.GzipCodec;
 REGISTER 'jyson-1.0.2/lib/jyson-1.0.2.jar';
 REGISTER 'amazon_data_udf.py' using jython AS udf;
 
-%DEFAULT input_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/user_aggregated.item_aggregated.tsv'
-%DEFAULT output_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/user_item_aggregated.with_negatives.tsv'
+%DEFAULT input_file '$HDFS_ROOT/amazon_data_processed/user_aggregated.item_aggregated.tsv'
+%DEFAULT output_file '$HDFS_ROOT/amazon_data_processed/user_item_aggregated.with_negatives.tsv'
 %DEFAULT num_parallel 1000
 
 /*

@@ -17,9 +17,9 @@ SET output.compression.codec org.apache.hadoop.io.compress.GzipCodec;
 REGISTER 'jyson-1.0.2/lib/jyson-1.0.2.jar';
 register 'amazon_data_udf.py' using jython AS udf;
 
-%DEFAULT input_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data/All_Amazon_Review.json.gz'
+%DEFAULT input_file '$HDFS_ROOT/amazon_data/All_Amazon_Review.json.gz'
 
-%DEFAULT output_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_sharded/All_Amazon_Review.json'
+%DEFAULT output_file '$HDFS_ROOT/amazon_data_sharded/All_Amazon_Review.json'
 
 %DEFAULT num_parallel 1000
 

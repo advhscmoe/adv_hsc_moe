@@ -12,10 +12,10 @@ SET output.compression.codec org.apache.hadoop.io.compress.GzipCodec;
 REGISTER 'jyson-1.0.2/lib/jyson-1.0.2.jar';
 REGISTER 'amazon_data_udf.py' using jython AS udf;
 
-%DEFAULT meta_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/All_Amazon_Meta.tsv/par*.gz'
-%DEFAULT review_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/All_Amazon_Review.tsv/par*.gz'
--- %DEFAULT csv_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_sharded/all_csv_files.tsv/par*.gz'
-%DEFAULT output_file '/user/recsys/rank_dev/yunjiang.jiang/amazon_data_processed/joined.tsv' 
+%DEFAULT meta_file '$HDFS_ROOT/amazon_data_processed/All_Amazon_Meta.tsv/par*.gz'
+%DEFAULT review_file '$HDFS_ROOT/amazon_data_processed/All_Amazon_Review.tsv/par*.gz'
+-- %DEFAULT csv_file '$HDFS_ROOT/amazon_data_sharded/all_csv_files.tsv/par*.gz'
+%DEFAULT output_file '$HDFS_ROOT/amazon_data_processed/joined.tsv' 
 meta = load '$meta_file' using PigStorage('\t', '-schema');
 review = load '$review_file' using PigStorage('\t', '-schema');
 -- csv = load '$csv_file' using PigStorage('\t', '-schema'); 
