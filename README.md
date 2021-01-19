@@ -1,3 +1,3 @@
 # adv_hsc_moe
 
-Relevant code for "Adversarial Mixture Of Expertswith Category Hierarchy Soft Constraint"
+Relevant code for "Adversarial Mixture Of Experts with Category Hierarchy Soft Constraint"
