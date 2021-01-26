@@ -108,8 +108,8 @@ class MixtureOfExperts():
 
     def compute_one_expert(self, expert_input):
         bn1 = tf.layers.batch_normalization(inputs=expert_input)
-        dnn1 = tf.layers.dense(bn1, 200, activation='relu')
-        dnn2 = tf.layers.dense(dnn1, 80, activation='relu')
+        dnn1 = tf.layers.dense(bn1, 128, activation='relu')
+        dnn2 = tf.layers.dense(dnn1, 64, activation='relu')
         dnn3 = tf.layers.dense(dnn2, 1, activation=None)
         return dnn3
 
