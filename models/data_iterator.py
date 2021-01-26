@@ -153,11 +153,11 @@ class DataIterator:
                 # category
                 tmp = ss[13].split('|')[-1]
                 category = self.source_dicts[2][tmp] if tmp in self.source_dicts[2] else 0
-                source.append([reviewerId, asin, title, brand, asin_overall_cnt, asin_overall_cnt_1, 
-                                asin_overall_cnt_2, asin_overall_cnt_3, asin_overall_cnt_4, asin_overall_cnt_5,
-                                reviewer_overall_cnt, reviewer_overall_cnt_1, reviewer_overall_cnt_2,
-                                reviewer_overall_cnt_3, reviewer_overall_cnt_4, reviewer_overall_cnt_5,
-                                asin_hist, brand_hist, top_cat, category])
+                source.append([reviewerId, asin, title, brand, asin_hist, brand_hist, top_cat, category,
+                                asin_overall_cnt, asin_overall_cnt_1, asin_overall_cnt_2, asin_overall_cnt_3, 
+                                asin_overall_cnt_4, asin_overall_cnt_5, reviewer_overall_cnt, 
+                                reviewer_overall_cnt_1, reviewer_overall_cnt_2, reviewer_overall_cnt_3, 
+                                reviewer_overall_cnt_4, reviewer_overall_cnt_5])
                 target.append([label])
 
                 if len(source) >= self.batch_size or len(target) >= self.batch_size:
